@@ -6,7 +6,7 @@ import * as AppActions from 'Actions/appActions'
 function* processAppLoaded() {
 	try {
 		yield call(() => AppActions.appLoaded())
-		yield put(AppActions.appLoadedSucces())
+		yield put(AppActions.appLoadedSuccess())
 	} catch (error) {
 		console.log('error', error)
 	}

@@ -1,4 +1,4 @@
 import * as Types from 'Types'
 
 export const appLoaded = () => ({ type: Types.APP_LOADED })
-export const appLoadedSucces = () => ({ type: Types.APP_LOADED_SUCCESS })
+export const appLoadedSuccess = () => ({ type: Types.APP_LOADED_SUCCESS })

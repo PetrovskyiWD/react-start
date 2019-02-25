@@ -1,0 +1,12 @@
+{
+	"auth": [
+		{ "id": 1, "email": "vova@gmail.com", "password": "123qwe", "token": "AJGDJ5262gbd4629re", "login": "Mazarine" }
+	],
+	"posts": [
+		{
+			"id": 1,
+			"title": "New Post",
+			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis mollitia nemo provident laudantium dolor fugiat."
+		}
+	]
+}
