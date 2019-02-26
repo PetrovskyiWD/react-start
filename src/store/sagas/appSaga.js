@@ -5,7 +5,7 @@ import * as AppActions from 'Actions/appActions'
 
 function* processAppLoaded() {
 	try {
-		yield call(() => AppActions.appLoaded())
+		yield call(() => AppActions.appLoading())
 		yield put(AppActions.appLoadedSuccess())
 	} catch (error) {
 		console.log('error', error)
@@ -13,7 +13,7 @@ function* processAppLoaded() {
 }
 
 function* appListener() {
-	yield takeLatest(Types.APP_LOADED, processAppLoaded)
+	yield takeLatest(Types.APP_LOADING, processAppLoaded)
 }
 
 export default function* appSaga() {

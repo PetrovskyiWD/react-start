@@ -2,41 +2,30 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-// import { useRequest } from 'Hooks/request'
-
 import * as AppActions from 'Actions/appActions'
-import * as PostsActions from 'Actions/postsActions'
 
 import { Loader } from 'Common'
 
-const App = ({ posts }) => {
+const App = ({ isLoaded, appLoading }) => {
 	useEffect(() => {
-		// getPosts()
-	}, [posts])
+		appLoading()
+	}, [])
 
-	if (!posts.length) return <Loader />
+	if (!isLoaded) return <Loader />
 
-	console.log('posts', posts)
-
-	return posts.map(post => (
-		<div key={post.id}>
-			<h3>{post.title}</h3>
-			<p>{posts.text}</p>
-		</div>
-	))
+	return null
 }
 
 App.propTypes = {
-	appLoaded: PropTypes.func.isRequired,
-	getPosts: PropTypes.func.isRequired,
+	isLoaded: PropTypes.bool.isRequired,
+	appLoading: PropTypes.func.isRequired,
 }
 
 export default connect(
-	({ posts: { data } }) => ({
-		posts: data,
+	({ app: { isLoaded } }) => ({
+		isLoaded: isLoaded,
 	}),
 	{
-		appLoaded: AppActions.appLoaded,
-		getPosts: PostsActions.getPosts,
+		appLoading: AppActions.appLoading,
 	},
 )(App)
